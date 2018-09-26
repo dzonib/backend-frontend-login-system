@@ -1,7 +1,7 @@
-// Helper function, transforms input to string sto validator can handle it
+// Helper function, transforms input to string so validator can handle it
 
 const isEmpty = require('./isEmpty');
 
-module.exports = (item) => {
-  return isEmpty(item) ? '' : item
+module.exports = (reqValue) => {
+  return isEmpty(reqValue) ? '' : reqValue;
 }

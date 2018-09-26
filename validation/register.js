@@ -7,14 +7,15 @@ module.exports = function ({name, email, password, password2}) {
 
   let errors = {};
 
-  // !name ? name = name : '';
 
-  // name ? name = name : name = '';
+  email = stringifyItem(email);
+  password = stringifyItem(password);
+  password2 = stringifyItem(password2);
 
-  let name = stringifyItem(name);
-  let email = stringifyItem(email);
-  let password = stringifyItem(password);
-  let password2 = stringifyItem(password2);
+  // name = stringifyItem(name);
+  // or
+  name ? name = name : name = '';
+
 
 
   if (!Validator.isLength(name, {min: 2, max: 20})) {
