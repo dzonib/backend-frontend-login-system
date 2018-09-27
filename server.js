@@ -18,7 +18,6 @@ const app = express();
 })(); 
 
 
-
 app.use(bodyParser.json());
 
 const users = require('./routes/api/users');

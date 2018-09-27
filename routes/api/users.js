@@ -33,7 +33,6 @@ router.post('/register', async(req, res) => {
 
       const newUser = new User({name, email, password});
 
-      console.log(newUser)
 
       const salt = await bcrypt.genSalt(10);
       const hash = await bcrypt.hash(newUser.password, salt);
@@ -101,7 +100,6 @@ router.post('/login', async(req, res) => {
 
 // protected test route
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-  console.log(req.user)
   res.json({name: req.user.name, email: req.user.email});
 })
 
